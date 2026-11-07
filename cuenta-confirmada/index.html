@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>QDD Móvil</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px 16px;
+    background: #282828; color: #d4be98; font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; line-height: 1.5;
+  }
+  main { width: 100%; max-width: 420px; background: #32302f; border: 1px solid #504945; border-radius: 8px; padding: 24px; }
+  .marca { color: #d8a657; font-weight: 700; margin: 0 0 16px; }
+  h1 { font-size: 20px; line-height: 1.3; margin: 0 0 8px; }
+  p { margin: 0; color: #a89984; }
+  #listo h1 { color: #a9b665; }
+  #falla h1 { color: #ea6962; }
+</style>
+</head>
+<body>
+<main>
+  <p class="marca">QDD Móvil</p>
+  <section id="listo">
+    <h1 data-en="Your account is confirmed">Tu cuenta está confirmada</h1>
+    <p data-en="Go back to the app and sign in with your email and password.">Vuelve a la app y entra con tu correo y tu contraseña.</p>
+  </section>
+  <section id="falla" hidden>
+    <h1 data-en="This link no longer works">El enlace ya no sirve</h1>
+    <p data-en="It expired or was already used. If your account isn't confirmed yet, create it again in the app to get a new email.">Venció o ya se usó. Si tu cuenta todavía no está confirmada, créala de nuevo en la app para recibir otro correo.</p>
+  </section>
+</main>
+<script>
+  // Auth vuelve aquí con la sesión o el error en la dirección: se mira el error y se borra todo, sin guardar nada.
+  var direccion = location.hash + location.search;
+  history.replaceState(null, "", location.pathname);
+  if (direccion.indexOf("error") !== -1) {
+    document.getElementById("listo").hidden = true;
+    document.getElementById("falla").hidden = false;
+  }
+  if ((navigator.language || "").indexOf("es") !== 0) {
+    document.documentElement.lang = "en";
+    document.querySelectorAll("[data-en]").forEach(function (e) { e.textContent = e.getAttribute("data-en"); });
+  }
+</script>
+</body>
+</html>
