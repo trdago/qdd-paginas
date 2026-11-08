@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Borrar tu cuenta · QDD Móvil</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 16px; background: #282828; color: #d4be98;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; line-height: 1.6;
+  }
+  main { max-width: 680px; margin: 0 auto; background: #32302f; border: 1px solid #504945; border-radius: 8px; padding: 24px; }
+  .marca { color: #d8a657; font-weight: 700; margin: 0 0 16px; }
+  h1 { font-size: 20px; line-height: 1.3; margin: 0 0 4px; }
+  h2 { font-size: 16px; color: #d8a657; margin: 24px 0 8px; }
+  p, li { color: #a89984; overflow-wrap: anywhere; }
+  p { margin: 0 0 8px; }
+  ul { margin: 0 0 8px; padding-left: 20px; }
+  .fecha { font-size: 13px; }
+  a { color: #7daea3; }
+</style>
+</head>
+<body>
+<main>
+  <p class="marca">QDD Móvil</p>
+  <h1 data-en="Delete your QDD Móvil account">Borrar tu cuenta de QDD Móvil</h1>
+  <p data-en="QDD Móvil is provided by Dagoberto Pailahueque. You can delete your account and its data at any time.">QDD Móvil la ofrece Dagoberto Pailahueque. Puedes borrar tu cuenta y sus datos cuando quieras.</p>
+  <h2 data-en="From the app">Desde la app</h2>
+  <ul>
+    <li data-en="Open QDD Móvil and go to Settings.">Abre QDD Móvil y entra a Ajustes.</li>
+    <li data-en="Tap Delete account and confirm.">Toca Borrar cuenta y confírmalo.</li>
+  </ul>
+  <p data-en="It is deleted right away.">Se borra en el momento.</p>
+  <h2 data-en="Without the app">Sin la app</h2>
+  <p data-en="Write from your account's email, with the subject “Delete my account”, to:">Escribe desde el correo de tu cuenta, con el asunto «Borrar mi cuenta», a:</p>
+  <p><a href="mailto:chilefplay@gmail.com">chilefplay@gmail.com</a></p>
+  <p data-en="We delete it within 30 days and let you know when it's done.">La borramos en un plazo de 30 días y te avisamos al terminar.</p>
+  <h2 data-en="What is deleted">Qué se borra</h2>
+  <ul>
+    <li data-en="Your account, with your email and password.">Tu cuenta, con tu correo y tu contraseña.</li>
+    <li data-en="Your phones and their notification codes.">Tus teléfonos y sus códigos de avisos.</li>
+    <li data-en="Your paired PCs. They keep working with QDD; they just stop showing in the app.">Tus PCs emparejados. Siguen funcionando con QDD; solo dejan de verse desde la app.</li>
+    <li data-en="Your monthly usage and your plan.">Tu uso del mes y tu plan.</li>
+  </ul>
+  <h2 data-en="What is kept">Qué se conserva</h2>
+  <p data-en="Your Pro payments, with no link to you, for refunds, claims and accounting. They are deleted 6 years after they happened.">Tus pagos de Pro, sin ningún vínculo contigo, para reembolsos, reclamos y contabilidad. Se borran a los 6 años de ocurridos.</p>
+  <h2 data-en="If you have Pro">Si tienes Pro</h2>
+  <p data-en="Deleting your account doesn't cancel your subscription: cancel it in Google Play so you aren't charged again.">Borrar la cuenta no cancela tu suscripción: cancélala en Google Play para que no se te siga cobrando.</p>
+  <p><a href="/privacidad/" data-en="Privacy policy">Política de privacidad</a></p>
+</main>
+<script>
+  if ((navigator.language || "").indexOf("es") !== 0) {
+    document.documentElement.lang = "en";
+    document.querySelectorAll("[data-en]").forEach(function (e) { e.textContent = e.getAttribute("data-en"); });
+  }
+</script>
+</body>
+</html>
